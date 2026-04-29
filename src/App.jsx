@@ -13,7 +13,7 @@ import Home         from "./pages/Home";
 import About        from "./pages/About";
 import Services     from "./pages/Services";
 import Portfolio    from "./pages/Portfolio";
-import Pricing      from "./pages/Pricing";
+import Careers      from "./pages/Careers";
 import Contact      from "./pages/Contact";
 
 // Page map — add new pages here
@@ -22,7 +22,7 @@ const PAGES = {
   About,
   Services,
   Portfolio,
-  Pricing,
+  Careers,
   Contact,
 };
 

@@ -30,7 +30,7 @@ src/
     ├── About.jsx
     ├── Services.jsx
     ├── Portfolio.jsx
-    ├── Pricing.jsx
+    ├── Careers.jsx
     └── Contact.jsx
 ```
 
@@ -62,7 +62,7 @@ All copy lives in **`src/data/siteData.js`**:
 - Add/remove services → edit `SERVICES` array
 - Add portfolio projects → edit `PORTFOLIO` array
 - Update testimonials → edit `TESTIMONIALS` array
-- Change pricing → edit `PRICING` array
+- Change Careers → edit `CAREERS` array
 - Update contact info → edit `CONTACT_INFO` array
 
 ## How to Add a New Page

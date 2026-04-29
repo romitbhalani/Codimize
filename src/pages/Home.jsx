@@ -169,7 +169,7 @@ export default function Home({ onNavigate }) {
               </p>
               <div style={{ display:"flex", gap:16, flexWrap:"wrap" }}>
                 <button className="btn-primary" onClick={() => onNavigate("Contact")}>Book a Free Call Today →</button>
-                <button className="btn-ghost"   onClick={() => onNavigate("Pricing")}>View Pricing</button>
+                <button className="btn-ghost"   onClick={() => onNavigate("Careers")}>View Careers</button>
               </div>
             </Reveal>
             <Reveal delay={120} y={20}>
@@ -194,10 +194,10 @@ export default function Home({ onNavigate }) {
             </div>
           </Reveal>
 
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:20 }}>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:20, alignItems:"stretch" }}>
             {TESTIMONIALS.map((t, i) => (
-              <Reveal key={t.name} delay={i * 100}>
-                <div className="card" style={{ padding:32, position:"relative" }}>
+              <Reveal key={t.name} delay={i * 100} style={{ height: "100%" }}>
+                <div className="card" style={{ padding:32, position:"relative", display:"flex", flexDirection:"column", justifyContent:"space-between", minHeight:"100%" }}>
                   <div style={{ position:"absolute", top:18, right:22, fontSize:64, color:"rgba(99,102,241,.1)", fontFamily:"serif", lineHeight:1 }}>"</div>
                   <div style={{ display:"flex", gap:3, marginBottom:18 }}>
                     {[0,1,2,3,4].map((s) => <span key={s} style={{ color:"#fbbf24", fontSize:14 }}>★</span>)}

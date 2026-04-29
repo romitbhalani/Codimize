@@ -8,7 +8,7 @@ const FOOTER_LINKS = [
   },
   {
     title: "Company",
-    links: ["About", "Portfolio", "Pricing", "Contact"],
+    links: ["About", "Portfolio", "Careers", "Contact"],
   },
   {
     title: "Connect",

@@ -1,5 +1,5 @@
 // ── Navigation ──────────────────────────────────────────────
-export const NAV_LINKS = ["Home", "About", "Services", "Portfolio", "Pricing", "Contact"];
+export const NAV_LINKS = ["Home", "About", "Services", "Portfolio", "Careers", "Contact"];
 
 // ── Services ─────────────────────────────────────────────────
 export const SERVICES = [
@@ -131,58 +131,80 @@ export const TESTIMONIALS = [
   },
 ];
 
-// ── Pricing ───────────────────────────────────────────────────
-export const PRICING = [
+
+export const CAREERS = [
   {
-    name: "Starter",
-    price: "$3,500",
-    period: "/mo",
-    desc: "Perfect for early-stage startups validating ideas fast.",
-    features: [
-      "Up to 2 developers",
-      "1 project sprint",
-      "React or Node.js dev",
-      "Weekly delivery updates",
-      "Slack communication",
-      "Basic QA & testing",
+    title: "Senior Full-Stack Engineer",
+    desc: "Build customer-facing products and internal tooling across React, Node.js, and cloud infrastructure.",
+    type: "Remote / Hybrid",
+    location: "Global (US/UK overlap)",
+    responsibilities: [
+      "Lead product development from discovery to launch.",
+      "Design scalable front-end and back-end architecture.",
+      "Mentor engineers and improve code quality.",
+      "Collaborate directly with founders and cross-functional teams.",
     ],
-    cta: "Get Started",
+    cta: "Apply Now",
     accent: "#6366f1",
-    highlight: false,
+    highlight: true,
   },
   {
-    name: "Growth",
-    price: "$8,500",
-    period: "/mo",
-    desc: "For scaling startups and SMEs that need reliable delivery.",
-    features: [
-      "4–6 developers + PM",
-      "Full-stack development",
-      "AI/ML integration",
-      "CI/CD pipeline setup",
-      "Dedicated Slack channel",
-      "Bi-weekly stakeholder calls",
-      "Advanced QA & automation",
+    title: "Full-Stack Developer",
+    desc: "Ship full-stack product features in React, Node.js, and cloud-native environments.",
+    type: "Full-time",
+    location: "Remote",
+    responsibilities: [
+      "Build and maintain modern web applications.",
+      "Implement APIs, databases, and user interfaces.",
+      "Collaborate with designers, PMs, and QA.",
+      "Own feature delivery end to end.",
     ],
-    cta: "Book a Call",
+    cta: "Apply Now",
+    accent: "#38bdf8",
+    highlight: true,
+  },
+  {
+    title: "Backend Engineer",
+    desc: "Develop scalable services, APIs, and data systems for high-growth SaaS platforms.",
+    type: "Full-time",
+    location: "Remote / US overlap",
+    responsibilities: [
+      "Design robust server-side architecture.",
+      "Build production-grade APIs and integrations.",
+      "Optimize performance and reliability.",
+      "Partner with front-end and product teams.",
+    ],
+    cta: "Apply Now",
     accent: "#a78bfa",
     highlight: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    desc: "Bespoke teams for complex, long-term product development.",
-    features: [
-      "Dedicated team (8–20 devs)",
-      "Embedded PM & Architect",
-      "SLA-backed delivery",
-      "Security audits & compliance",
-      "24/7 on-call support",
-      "Quarterly business reviews",
-      "IP & NDA protection",
+    title: "AI / ML Product Engineer",
+    desc: "Create intelligent features, NLP pipelines, and automation for enterprise-grade SaaS products.",
+    type: "Full-time",
+    location: "Remote",
+    responsibilities: [
+      "Build ML-driven product experiences and workflows.",
+      "Integrate large language models and data systems.",
+      "Optimize models for reliability and performance.",
+      "Work closely with product and engineering leadership.",
     ],
-    cta: "Contact Us",
+    cta: "Apply Now",
+    accent: "#a78bfa",
+    highlight: false,
+  },
+  {
+    title: "Product Design Lead",
+    desc: "Shape user experiences for high-growth SaaS and enterprise platforms.",
+    type: "Flexible",
+    location: "Remote / EMEA preferred",
+    responsibilities: [
+      "Own design direction across web and mobile interfaces.",
+      "Run user research, prototypes, and usability reviews.",
+      "Collaborate with engineering and go-to-market teams.",
+      "Help define brand and product positioning.",
+    ],
+    cta: "Apply Now",
     accent: "#06b6d4",
     highlight: false,
   },

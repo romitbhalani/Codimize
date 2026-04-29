@@ -77,7 +77,7 @@ export default function Navbar({ currentPage, onNavigate }) {
             }}
           >
             Codimize
-          </span>
+          </span> 
         </div>
 
         {/* Desktop links */}

@@ -4,7 +4,7 @@ import Reveal  from "../components/ui/Reveal";
 import { CONTACT_INFO } from "../data/siteData";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name:"", email:"", budget:"", message:"" });
+  const [form, setForm] = useState({ name:"", email:"", message:"" });
   const [submitted, setSubmitted] = useState(false);
 
   const muted = "rgba(255,255,255,.42)";
@@ -38,7 +38,7 @@ export default function Contact() {
 
             {CONTACT_INFO.map(({ icon, value, label }) => (
               <div key={label} style={{ display:"flex", gap:16, alignItems:"center", marginBottom:24 }}>
-                <div style={{ width:48, height:48, background:"rgba(99,102,241,.1)", border:"1px solid rgba(99,102,241,.2)", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", color:"#818cf8", fontSize:20, flexShrink:0 }}>
+                <div style={{ width:48, height:48, background:"rgba(0,150,255,.1)", border:"1px solid rgba(0,150,255,.2)", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", color:"#60CDFF", fontSize:20, flexShrink:0 }}>
                   {icon}
                 </div>
                 <div>
@@ -52,7 +52,7 @@ export default function Contact() {
           {/* ── Right: form ── */}
           <Reveal delay={150}>
             {submitted ? (
-              <div style={{ background:"#0f0f1a", border:"1px solid rgba(99,102,241,.3)", borderRadius:24, padding:"56px 40px", textAlign:"center" }}>
+              <div style={{ background:"#0f0f1a", border:"1px solid rgba(0,150,255,.3)", borderRadius:24, padding:"56px 40px", textAlign:"center" }}>
                 <div style={{ fontSize:64, marginBottom:20 }}>✅</div>
                 <h2 style={{ fontSize:24, fontWeight:800, color:"#fff", marginBottom:12 }}>Message Sent!</h2>
                 <p style={{ color:muted }}>We'll be in touch within 4 business hours.</p>
@@ -73,16 +73,6 @@ export default function Contact() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                   />
-                  <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                  >
-                    <option value="">Project Budget (USD)</option>
-                    <option>Under $10k</option>
-                    <option>$10k – $50k</option>
-                    <option>$50k – $200k</option>
-                    <option>$200k+</option>
-                  </select>
                   <textarea
                     placeholder="Tell us about your project..."
                     rows={5}

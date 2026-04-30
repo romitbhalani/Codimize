@@ -57,15 +57,14 @@ export default function Navbar({ currentPage, onNavigate }) {
         >
           <div
             style={{
-              width: 36, height: 36,
-              background: "linear-gradient(135deg,#6366f1,#8b5cf6)",
+              width: 60, height: 60,
               borderRadius: 10,
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 18,
-              boxShadow: "0 4px 20px rgba(99,102,241,.4)",
+              boxShadow: "0 4px 20px rgba(0,150,255,.4)",
             }}
           >
-            ◈
+            <img src="/assets/logo.png" alt="" style={{width: 56, height: 76, objectFit: 'cover'}} />
           </div>
           <span
             style={{

@@ -8,8 +8,8 @@ export const SERVICES = [
     title: "Web Development",
     desc: "Enterprise-grade apps in React, Angular, Node.js, and .NET. Pixel-perfect UIs built to international standards.",
     tags: ["React", "Angular", "Node.js", ".NET"],
-    color: "#6366f1",
-    rgb: "99,102,241",
+    color: "#0096FF",
+    rgb: "0,150,255",
   },
   {
     icon: "⬡",
@@ -24,8 +24,8 @@ export const SERVICES = [
     title: "AI-Powered Solutions",
     desc: "LLM integrations, RAG pipelines, AI agents, and intelligent automation that keeps you ahead of the curve.",
     tags: ["GPT-4", "LangChain", "RAG", "Agents"],
-    color: "#a78bfa",
-    rgb: "167,139,250",
+    color: "#38BEFF",
+    rgb: "56,190,255",
   },
   {
     icon: "▦",
@@ -62,8 +62,8 @@ export const PORTFOLIO = [
     desc: "Multi-tenant B2B SaaS platform for UK accounting firms. 400+ firms onboarded in 6 months.",
     metrics: ["£2.4M ARR", "400+ clients", "99.97% uptime"],
     stack: ["React", "Node.js", "PostgreSQL", "AWS"],
-    accent: "#6366f1",
-    rgb: "99,102,241",
+    accent: "#0096FF",
+    rgb: "0,150,255",
   },
   {
     title: "MedAI Assist",
@@ -92,8 +92,8 @@ export const PORTFOLIO = [
     desc: "Contract analysis and risk scoring platform for US law firms using RAG and GPT-4.",
     metrics: ["80% faster review", "500+ firms", "SOC2 certified"],
     stack: ["Python", "LangChain", "React", "AWS"],
-    accent: "#a78bfa",
-    rgb: "167,139,250",
+    accent: "#38BEFF",
+    rgb: "56,190,255",
   },
 ];
 
@@ -104,8 +104,8 @@ export const TESTIMONIALS = [
     role: "CTO, VaultHQ",
     loc: "London, UK",
     av: "JW",
-    color: "#6366f1",
-    rgb: "99,102,241",
+    color: "#0096FF",
+    rgb: "0,150,255",
     quote:
       "Codimize delivered our entire SaaS platform in 11 weeks — on spec, on budget, and with zero compromise on quality. Their engineers are world-class and communication is flawless.",
   },
@@ -145,7 +145,7 @@ export const CAREERS = [
       "Collaborate directly with founders and cross-functional teams.",
     ],
     cta: "Apply Now",
-    accent: "#6366f1",
+    accent: "#0096FF",
     highlight: true,
   },
   {
@@ -175,7 +175,7 @@ export const CAREERS = [
       "Partner with front-end and product teams.",
     ],
     cta: "Apply Now",
-    accent: "#a78bfa",
+    accent: "#38BEFF",
     highlight: true,
   },
   {
@@ -190,7 +190,7 @@ export const CAREERS = [
       "Work closely with product and engineering leadership.",
     ],
     cta: "Apply Now",
-    accent: "#a78bfa",
+    accent: "#38BEFF",
     highlight: false,
   },
   {
@@ -242,6 +242,6 @@ export const STATS = [
 // ── Contact Info ──────────────────────────────────────────────
 export const CONTACT_INFO = [
   { icon: "✉",  value: "hello@codimize.io",          label: "Email Us"             },
-  { icon: "◷",  value: "Mon–Sat · 9am–8pm IST",      label: "Office Hours"         },
+  { icon: "◷",  value: "Mon–Fri · 24 Hours",      label: "Office Hours"         },
   { icon: "◎",  value: "30-min free discovery call",  label: "Book a Call"          },
 ];

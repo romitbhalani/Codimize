@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
   },
   {
     title: "Connect",
-    links: ["hello@codimize.io", "LinkedIn", "GitHub", "Twitter"],
+    links: ["hello@codimize.io", "LinkedIn", "Instagram"],
   },
 ];
 
@@ -50,14 +50,14 @@ export default function Footer({ onNavigate }) {
             <div style={{ display: "flex", alignItems: "center", gap: 11, marginBottom: 20 }}>
               <div
                 style={{
-                  width: 34, height: 34,
-                  background: "linear-gradient(135deg,#6366f1,#8b5cf6)",
-                  borderRadius: 9,
+                  width: 60, height: 60,
+                  borderRadius: 10,
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 17,
+                  fontSize: 18,
+                  boxShadow: "0 4px 20px rgba(0,150,255,.4)",
                 }}
               >
-                ◈
+                <img src="/assets/logo.png" alt="" style={{ width: 56, height: 76, objectFit: 'cover' }} />
               </div>
               <span style={{ fontFamily: "'Sora', 'Sora Fallback', sans-serif", fontWeight: 800, fontSize: 20, color: "#fff" }}>
                 Codimize
@@ -67,9 +67,15 @@ export default function Footer({ onNavigate }) {
               Build Tomorrow, Ship Today. India-based, globally delivered. Your engineering partner for the AI era.
             </p>
             <div style={{ display: "flex", gap: 10 }}>
-              {["Li", "GH", "Tw"].map((s) => (
-                <div
-                  key={s}
+              {[
+                { label: "Li", url: "https://www.linkedin.com/company/codimize/posts/?feedView=all" },
+                { label: "In", url: "https://www.instagram.com/codi_mize?igsh=cnYxaXA4aG02Njl2&utm_source=qr" },
+              ].map(({ label, url }) => (
+                <a
+                  key={label}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     width: 36, height: 36,
                     background: "#141422",
@@ -77,10 +83,11 @@ export default function Footer({ onNavigate }) {
                     borderRadius: 8,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: 12, color: muted, cursor: "pointer",
+                    textDecoration: "none",
                   }}
                 >
-                  {s}
-                </div>
+                  {label}
+                </a>
               ))}
             </div>
           </div>
@@ -98,17 +105,37 @@ export default function Footer({ onNavigate }) {
                 {title}
               </h4>
               <ul style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {links.map((link) => (
-                  <li
-                    key={link}
-                    style={{ fontSize: 14, color: muted, cursor: "pointer", transition: "color .2s" }}
-                    onClick={() => NAV_LINKS.includes(link) && onNavigate(link)}
-                    onMouseOver={(e) => (e.target.style.color = "#a78bfa")}
-                    onMouseOut={(e)  => (e.target.style.color = muted)}
-                  >
-                    {link}
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const socialUrls = {
+                    LinkedIn: "https://www.linkedin.com/company/codimize/posts/?feedView=all",
+                    Instagram: "https://www.instagram.com/codi_mize?igsh=cnYxaXA4aG02Njl2&utm_source=qr",
+                  };
+                  const url = socialUrls[link];
+                  return url ? (
+                    <li key={link} style={{ fontSize: 14 }}>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: muted, textDecoration: "none", transition: "color .2s" }}
+                        onMouseOver={(e) => (e.target.style.color = "#38BEFF")}
+                        onMouseOut={(e)  => (e.target.style.color = muted)}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ) : (
+                    <li
+                      key={link}
+                      style={{ fontSize: 14, color: muted, cursor: "pointer", transition: "color .2s" }}
+                      onClick={() => NAV_LINKS.includes(link) && onNavigate(link)}
+                      onMouseOver={(e) => (e.target.style.color = "#38BEFF")}
+                      onMouseOut={(e)  => (e.target.style.color = muted)}
+                    >
+                      {link}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

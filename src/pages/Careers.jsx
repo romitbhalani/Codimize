@@ -37,22 +37,22 @@ export default function Careers({ onNavigate }) {
                   justifyContent: "space-between",
                   minHeight: "100%",
                   padding: 40,
-                  border: job.highlight ? "1px solid rgba(167,139,250,.5)" : `1px solid ${bdr}`,
+                  border: job.highlight ? "1px solid rgba(0,150,255,.5)" : `1px solid ${bdr}`,
                   position: "relative",
                   overflow: "hidden",
-                  background: job.highlight ? "rgba(18,14,32,.98)" : "#0f0f1a",
+                  background: job.highlight ? "rgba(8,14,24,.98)" : "#0f0f1a",
                 }}
               >
                 {job.highlight && (
-                  <div style={{ position:"absolute", top:0, left:0, right:0, height:2, background:"linear-gradient(90deg,#6366f1,#a78bfa,#06b6d4)" }}/>
+                  <div style={{ position:"absolute", top:0, left:0, right:0, height:2, background:"linear-gradient(90deg,#0096FF,#38BEFF,#06b6d4)" }}/>
                 )}
                 {job.highlight && (
-                  <div style={{ position:"absolute", top:"-40%", right:"-20%", width:300, height:300, borderRadius:"50%", background:"radial-gradient(circle,rgba(167,139,250,.07),transparent 70%)", pointerEvents:"none" }}/>
+                  <div style={{ position:"absolute", top:"-40%", right:"-20%", width:300, height:300, borderRadius:"50%", background:"radial-gradient(circle,rgba(0,150,255,.07),transparent 70%)", pointerEvents:"none" }}/>
                 )}
 
                 <div style={{ position:"relative", zIndex:1 }}>
                   {job.highlight && (
-                    <div style={{ display:"inline-block", background:"rgba(167,139,250,.15)", color:"#a78bfa", fontSize:11, fontWeight:700, padding:"4px 14px", borderRadius:20, marginBottom:16, textTransform:"uppercase", letterSpacing:".08em" }}>
+                    <div style={{ display:"inline-block", background:"rgba(0,150,255,.15)", color:"#38BEFF", fontSize:11, fontWeight:700, padding:"4px 14px", borderRadius:20, marginBottom:16, textTransform:"uppercase", letterSpacing:".08em" }}>
                       Hiring Now
                     </div>
                   )}

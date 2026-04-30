@@ -5,7 +5,7 @@ import VideoBanner from "../components/ui/VideoBanner";
 import { STATS }   from "../data/siteData";
 
 const VALUES = [
-  { icon:"◎", title:"AI-First Thinking",      desc:"We embed intelligence into every layer — not as an afterthought, but as a core design principle.", color:"#a78bfa", rgb:"167,139,250" },
+  { icon:"◎", title:"AI-First Thinking",      desc:"We embed intelligence into every layer — not as an afterthought, but as a core design principle.", color:"#38BEFF", rgb:"56,190,255" },
   { icon:"⚡", title:"Speed Without Compromise", desc:"Lean sprints, proven architecture, and reusable components to ship faster without cutting corners.",  color:"#fbbf24", rgb:"251,191,36"  },
   { icon:"◉", title:"Radical Transparency",    desc:"Weekly demos, real-time Slack updates, and honest estimates. You're always in the loop.",              color:"#06b6d4", rgb:"6,182,212"   },
   { icon:"▣", title:"Ownership Mindset",       desc:"We treat your product like it's ours. Every decision is made with business outcomes in mind.",         color:"#34d399", rgb:"52,211,153"  },
@@ -63,7 +63,7 @@ export default function About({ onNavigate }) {
                   "Your IP is 100% yours from day one",
                 ].map((item, i) => (
                   <div key={i} style={{ display:"flex", alignItems:"center", gap:12 }}>
-                    <div style={{ width:22, height:22, borderRadius:"50%", background:"rgba(99,102,241,.15)", border:"1px solid rgba(99,102,241,.35)", display:"flex", alignItems:"center", justifyContent:"center", color:"#818cf8", fontSize:11, fontWeight:700, flexShrink:0 }}>✓</div>
+                    <div style={{ width:22, height:22, borderRadius:"50%", background:"rgba(0,150,255,.15)", border:"1px solid rgba(0,150,255,.35)", display:"flex", alignItems:"center", justifyContent:"center", color:"#60CDFF", fontSize:11, fontWeight:700, flexShrink:0 }}>✓</div>
                     <span style={{ color:"rgba(255,255,255,.7)", fontSize:15 }}>{item}</span>
                   </div>
                 ))}
@@ -103,7 +103,7 @@ export default function About({ onNavigate }) {
 
           {/* CTA */}
           <Reveal delay={200}>
-            <div style={{ marginTop:72, position:"relative", overflow:"hidden", background:"#0f0f1a", border:"1px solid rgba(99,102,241,.22)", borderRadius:24 }}>
+            <div style={{ marginTop:72, position:"relative", overflow:"hidden", background:"#0f0f1a", border:"1px solid rgba(0,150,255,.22)", borderRadius:24 }}>
               <GeoBg variant="c" />
               <div className="split-grid split-grid-rev" style={{ position:"relative", zIndex:2, gap:0 }}>
                 <div style={{ padding:"52px 48px" }}>

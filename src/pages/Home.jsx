@@ -37,7 +37,7 @@ export default function Home({ onNavigate }) {
         <Particles count={52} />
 
         {/* Ambient orbs */}
-        <div style={{ position:"absolute", top:"-15%", right:"-8%", width:700, height:700, borderRadius:"50%", background:"radial-gradient(circle,rgba(99,102,241,.13),transparent 70%)", pointerEvents:"none", animation:"float-b 9s ease-in-out infinite" }}/>
+        <div style={{ position:"absolute", top:"-15%", right:"-8%", width:700, height:700, borderRadius:"50%", background:"radial-gradient(circle,rgba(0,150,255,.13),transparent 70%)", pointerEvents:"none", animation:"float-b 9s ease-in-out infinite" }}/>
         <div style={{ position:"absolute", bottom:"-12%", left:"-6%", width:540, height:540, borderRadius:"50%", background:"radial-gradient(circle,rgba(6,182,212,.09),transparent 70%)", pointerEvents:"none", animation:"float-a 11s ease-in-out infinite" }}/>
 
         <div className="section-wrap" style={{ position:"relative", zIndex:2 }}>
@@ -81,7 +81,7 @@ export default function Home({ onNavigate }) {
 
             {/* Scroll cue */}
             <div style={{ marginTop:80, display:"flex", alignItems:"center", gap:12, animation:"slide-up .9s ease forwards", opacity:0, animationDelay:".7s" }}>
-              <div style={{ width:1, height:52, background:"linear-gradient(to bottom,transparent,rgba(99,102,241,.8))" }}/>
+              <div style={{ width:1, height:52, background:"linear-gradient(to bottom,transparent,rgba(0,150,255,.8))" }}/>
               <span style={{ fontSize:11, color:"rgba(255,255,255,.2)", letterSpacing:".14em", textTransform:"uppercase" }}>
                 Scroll to explore
               </span>
@@ -94,7 +94,7 @@ export default function Home({ onNavigate }) {
       {/* ── TECH STACK MARQUEE ── */}
       <section style={{ background:"#0a0a14", borderTop:"1px solid rgba(255,255,255,.06)", borderBottom:"1px solid rgba(255,255,255,.06)", padding:"48px 0 44px", overflow:"hidden", position:"relative" }}>
         {/* Subtle ambient glow */}
-        <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 80% 60% at 50% 50%, rgba(99,102,241,.06), transparent)", pointerEvents:"none" }} />
+        <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,150,255,.06), transparent)", pointerEvents:"none" }} />
         <p style={{ textAlign:"center", fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"rgba(255,255,255,.22)", fontWeight:600, marginBottom:28, position:"relative", zIndex:1 }}>
           Trusted Technologies &amp; Platforms
         </p>
@@ -156,7 +156,7 @@ export default function Home({ onNavigate }) {
       {/* ── CTA BANNER ── */}
       <section style={{ position:"relative", padding:"100px 24px", overflow:"hidden", background:"#0f0f1a" }}>
         <GeoBg variant="c" />
-        <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg,rgba(99,102,241,.14),rgba(139,92,246,.08))", pointerEvents:"none" }}/>
+        <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg,rgba(0,150,255,.14),rgba(56,190,255,.08))", pointerEvents:"none" }}/>
         <div style={{ maxWidth:1160, margin:"0 auto", position:"relative", zIndex:2 }}>
           <div className="split-grid">
             <Reveal>
@@ -198,7 +198,7 @@ export default function Home({ onNavigate }) {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 100} style={{ height: "100%" }}>
                 <div className="card" style={{ padding:32, position:"relative", display:"flex", flexDirection:"column", justifyContent:"space-between", minHeight:"100%" }}>
-                  <div style={{ position:"absolute", top:18, right:22, fontSize:64, color:"rgba(99,102,241,.1)", fontFamily:"serif", lineHeight:1 }}>"</div>
+                  <div style={{ position:"absolute", top:18, right:22, fontSize:64, color:"rgba(0,150,255,.1)", fontFamily:"serif", lineHeight:1 }}>"</div>
                   <div style={{ display:"flex", gap:3, marginBottom:18 }}>
                     {[0,1,2,3,4].map((s) => <span key={s} style={{ color:"#fbbf24", fontSize:14 }}>★</span>)}
                   </div>

@@ -36,7 +36,7 @@ button { cursor: pointer; }
 
 /* ── Reusable utility classes ── */
 .gt {
-  background: linear-gradient(135deg, #c7d2fe, #a78bfa, #67e8f9);
+  background: linear-gradient(135deg, #B3E5FF, #38BEFF, #67e8f9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -46,9 +46,9 @@ button { cursor: pointer; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: #818cf8;
+  background: rgba(0, 150, 255, 0.1);
+  border: 1px solid rgba(0, 150, 255, 0.25);
+  color: #60CDFF;
   font-size: 12px;
   font-weight: 600;
   padding: 5px 14px;
@@ -71,7 +71,7 @@ button { cursor: pointer; }
 
 /* ── Buttons ── */
 .btn-primary {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+  background: linear-gradient(135deg, #0096FF 0%, #0070CC 50%, #0096FF 100%);
   background-size: 200%;
   border: none;
   color: #fff;
@@ -85,7 +85,7 @@ button { cursor: pointer; }
   letter-spacing: 0.01em;
 }
 .btn-primary:hover {
-  box-shadow: 0 18px 52px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 18px 52px rgba(0, 150, 255, 0.5);
   filter: brightness(1.1);
 }
 
@@ -102,9 +102,9 @@ button { cursor: pointer; }
   backdrop-filter: blur(8px);
 }
 .btn-ghost:hover {
-  border-color: rgba(99, 102, 241, 0.55);
-  color: #a78bfa;
-  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(0, 150, 255, 0.55);
+  color: #38BEFF;
+  background: rgba(0, 150, 255, 0.08);
 }
 
 /* ── Cards ── */
@@ -115,25 +115,25 @@ button { cursor: pointer; }
   transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
 }
 .card:hover {
-  border-color: rgba(99, 102, 241, 0.38);
+  border-color: rgba(0, 150, 255, 0.38);
   background: rgba(18, 18, 30, 0.98);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-              0 0 0 1px rgba(99, 102, 241, 0.12),
+              0 0 0 1px rgba(0, 150, 255, 0.12),
               inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* ── Stat cards ── */
 .stat-card {
-  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
-  border: 1px solid rgba(99, 102, 241, 0.18);
+  background: linear-gradient(135deg, rgba(0,150,255,0.08), rgba(56,190,255,0.05));
+  border: 1px solid rgba(0, 150, 255, 0.18);
   border-radius: 16px;
   padding: 28px 24px;
   text-align: center;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .stat-card:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+  border-color: rgba(0, 150, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 150, 255, 0.15);
 }
 
 /* ── Image wrapper — hover-zoom container ── */
@@ -215,7 +215,7 @@ button { cursor: pointer; }
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  background: linear-gradient(90deg, #0096FF, #38BEFF);
   transition: width 0.25s;
 }
 .nav-link:hover,
@@ -248,8 +248,8 @@ input, textarea, select {
   transition: border-color 0.2s, background 0.2s;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: rgba(99, 102, 241, 0.6);
-  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(0, 150, 255, 0.6);
+  background: rgba(0, 150, 255, 0.05);
 }
 ::placeholder { color: rgba(255, 255, 255, 0.2); }
 select option  { background: #0f0f1a; color: #e8e8f4; }

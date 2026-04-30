@@ -29,7 +29,7 @@ export default function About({ onNavigate }) {
               <span className="gt">Built for Global Impact.</span>
             </h1>
             <p style={{ color:muted, fontSize:18, lineHeight:1.82, maxWidth:660, marginBottom:64 }}>
-              Founded in Ahmedabad, India, Codimize was built by engineers who worked at Tier-1 product
+              Founded in Surat, India, Codimize was built by engineers who worked at Tier-1 product
               companies and wanted to bring that same quality to clients worldwide. We're not a body-shop
               — we're a product-thinking engineering partner.
             </p>

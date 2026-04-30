@@ -12,7 +12,7 @@ const FOOTER_LINKS = [
   },
   {
     title: "Connect",
-    links: ["hello@codimize.io", "LinkedIn", "Instagram"],
+    links: ["contact@codimize.io", "LinkedIn", "Instagram"],
   },
 ];
 
@@ -154,7 +154,7 @@ export default function Footer({ onNavigate }) {
           }}
         >
           <p style={{ color: dim, fontSize: 13 }}>
-            © 2025 Codimize Technologies Pvt. Ltd. · Ahmedabad, India
+            © 2025 Codimize Technologies Pvt. Ltd. · Surat, India
           </p>
           <div style={{ display: "flex", gap: 24 }}>
             {["Privacy Policy", "Terms of Service", "Sitemap"].map((l) => (

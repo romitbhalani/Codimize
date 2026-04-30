@@ -6,6 +6,8 @@ import { CONTACT_INFO } from "../data/siteData";
 export default function Contact() {
   const [form, setForm] = useState({ name:"", email:"", message:"" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const muted = "rgba(255,255,255,.42)";
   const dim   = "rgba(255,255,255,.2)";
@@ -83,9 +85,15 @@ export default function Contact() {
                     className="btn-primary"
                     style={{ width:"100%", padding:16 }}
                     onClick={handleSubmit}
+                    disabled={sending}
                   >
-                    Send Message & Book a Call →
+                    {sending ? "Sending..." : "Send Message & Book a Call →"}
                   </button>
+                  {error && (
+                    <p style={{ fontSize:13, color:"#f87171", textAlign:"center", marginTop:6 }}>
+                      {error}
+                    </p>
+                  )}
                   <p style={{ fontSize:12, color:dim, textAlign:"center" }}>
                     We respond within 4 hours · No spam · No commitment
                   </p>

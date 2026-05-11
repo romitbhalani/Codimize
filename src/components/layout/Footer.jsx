@@ -13,7 +13,7 @@ const FOOTER_LINKS = [
   },
   {
     title: "Connect",
-    links: ["contact@codimize.io", "LinkedIn", "Instagram"],
+    links: ["contact@codimize.com", "LinkedIn", "Instagram"],
   },
 ];
 

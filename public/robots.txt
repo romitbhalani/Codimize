@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Block non-page assets from indexing
+Disallow: /assets/
+
 Sitemap: https://www.codimize.com/sitemap.xml

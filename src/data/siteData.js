@@ -760,7 +760,7 @@ export const STATS = [
 
 // ── Contact Info ──────────────────────────────────────────────
 export const CONTACT_INFO = [
-  { icon: "✉",  value: "hello@codimize.io",         label: "Email Us"    },
+  { icon: "✉",  value: "contact@codimize.com",         label: "Email Us"    },
   { icon: "📱", value: "+91 63548 44657",            label: "Call Us"     },
   { icon: "◷",  value: "Mon–Fri · 24 Hours",        label: "Office Hours"},
   { icon: "◎",  value: "30-min free discovery call", label: "Book a Call" },

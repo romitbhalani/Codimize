@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import GeoBg      from "../components/ui/GeoBg";
 import Reveal      from "../components/ui/Reveal";
 import VideoBanner from "../components/ui/VideoBanner";
 import { PORTFOLIO } from "../data/siteData";
 
-export default function Portfolio({ onNavigate }) {
+export default function Portfolio() {
+  const navigate = useNavigate();
   const muted = "rgba(255,255,255,.42)";
   const bdr   = "rgba(255,255,255,.07)";
 
@@ -70,7 +72,7 @@ export default function Portfolio({ onNavigate }) {
             <p style={{ color:muted, marginBottom:28, fontSize:16 }}>
               We have 40+ additional case studies across various industries.
             </p>
-            <button className="btn-primary" onClick={() => onNavigate("Contact")}>
+            <button className="btn-primary" onClick={() => navigate("/contact")}>
               Request Full Portfolio →
             </button>
           </div>

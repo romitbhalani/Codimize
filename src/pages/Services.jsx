@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import GeoBg      from "../components/ui/GeoBg";
 import Reveal      from "../components/ui/Reveal";
 import VideoBanner from "../components/ui/VideoBanner";
 import { SERVICES } from "../data/siteData";
 
-export default function Services({ onNavigate }) {
+export default function Services() {
+  const navigate = useNavigate();
   const muted = "rgba(255,255,255,.42)";
   const bdr   = "rgba(255,255,255,.07)";
 
@@ -23,8 +25,8 @@ export default function Services({ onNavigate }) {
               Everything you need to build, launch, and scale a world-class software product — from first line of code to production at scale.
             </p>
             <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
-              <button className="btn-primary" onClick={() => onNavigate("Contact")}>Start a Project →</button>
-              <button className="btn-ghost" onClick={() => onNavigate("Portfolio")}>See Our Work</button>
+              <button className="btn-primary" onClick={() => navigate("/contact")}>Start a Project →</button>
+              <button className="btn-ghost" onClick={() => navigate("/portfolio")}>See Our Work</button>
             </div>
           </Reveal>
           <Reveal delay={120} y={20}>
@@ -38,7 +40,23 @@ export default function Services({ onNavigate }) {
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", gap:22, alignItems:"stretch" }}>
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 70} style={{ height:"100%" }}>
-              <div className="card" style={{ padding:36, position:"relative", overflow:"hidden", height:"100%", display:"flex", flexDirection:"column" }}>
+              <div
+                className="card"
+                onClick={() => navigate(`/services/${s.slug}`)}
+                style={{
+                  padding:36, position:"relative", overflow:"hidden",
+                  height:"100%", display:"flex", flexDirection:"column",
+                  cursor:"pointer", transition:"transform .25s, border-color .25s",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.borderColor = `rgba(${s.rgb},.4)`;
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "";
+                }}
+              >
                 {/* Top accent */}
                 <div style={{ position:"absolute", top:0, left:0, right:0, height:2, background:`linear-gradient(90deg,${s.color}00,${s.color},${s.color}00)` }}/>
                 {/* Corner glow */}
@@ -49,8 +67,11 @@ export default function Services({ onNavigate }) {
                 </div>
                 <h3 style={{ fontSize:20, fontWeight:700, marginBottom:12, color:"#fff" }}>{s.title}</h3>
                 <p style={{ color:muted, fontSize:14, lineHeight:1.8, marginBottom:20, flex:1 }}>{s.desc}</p>
-                <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:6, marginBottom:16 }}>
                   {s.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                </div>
+                <div style={{ display:"flex", alignItems:"center", gap:6, color:s.color, fontSize:13, fontWeight:600 }}>
+                  View Full Details <span style={{ fontSize:16 }}>→</span>
                 </div>
               </div>
             </Reveal>
@@ -66,7 +87,7 @@ export default function Services({ onNavigate }) {
             <p style={{ color:muted, marginBottom:28 }}>
               Book a free 30-min consultation and our architects will scope the right approach for your goals.
             </p>
-            <button className="btn-primary" onClick={() => onNavigate("Contact")}>
+            <button className="btn-primary" onClick={() => navigate("/contact")}>
               Get a Free Technical Consultation →
             </button>
           </div>

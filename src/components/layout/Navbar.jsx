@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
-import { NAV_LINKS } from "../../data/siteData";
+import { NavLink, Link, useLocation } from "react-router-dom";
+import { NAV_LINKS, NAV_ROUTES } from "../../data/siteData";
 
-/**
- * Navbar — sticky top navigation.
- * Goes from transparent → blurred glass on scroll.
- * Collapses to hamburger on mobile.
- */
-export default function Navbar({ currentPage, onNavigate }) {
-  const [scrolled,  setScrolled]  = useState(false);
-  const [menuOpen,  setMenuOpen]  = useState(false);
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -16,13 +13,7 @@ export default function Navbar({ currentPage, onNavigate }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu whenever page changes
-  useEffect(() => { setMenuOpen(false); }, [currentPage]);
-
-  const handleNav = (page) => {
-    onNavigate(page);
-    setMenuOpen(false);
-  };
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   return (
     <nav
@@ -51,9 +42,9 @@ export default function Navbar({ currentPage, onNavigate }) {
         }}
       >
         {/* Logo */}
-        <div
-          onClick={() => handleNav("Home")}
-          style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 11 }}
+        <Link
+          to="/"
+          style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}
         >
           <div
             style={{
@@ -76,8 +67,8 @@ export default function Navbar({ currentPage, onNavigate }) {
             }}
           >
             Codimize
-          </span> 
-        </div>
+          </span>
+        </Link>
 
         {/* Desktop links */}
         <div
@@ -85,21 +76,24 @@ export default function Navbar({ currentPage, onNavigate }) {
           style={{ display: "flex", gap: 36, alignItems: "center" }}
         >
           {NAV_LINKS.map((link) => (
-            <span
+            <NavLink
               key={link}
-              className={`nav-link${currentPage === link ? " active" : ""}`}
-              onClick={() => handleNav(link)}
+              to={NAV_ROUTES[link]}
+              className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+              style={{ textDecoration: "none" }}
+              end={link === "Home"}
             >
               {link}
-            </span>
+            </NavLink>
           ))}
-          <button
-            className="btn-primary"
-            style={{ padding: "10px 22px", fontSize: 13 }}
-            onClick={() => handleNav("Contact")}
-          >
-            Book a Call
-          </button>
+          <Link to="/contact" style={{ textDecoration: "none" }}>
+            <button
+              className="btn-primary"
+              style={{ padding: "10px 22px", fontSize: 13 }}
+            >
+              Book a Call
+            </button>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -137,18 +131,20 @@ export default function Navbar({ currentPage, onNavigate }) {
           }}
         >
           {NAV_LINKS.map((link) => (
-            <span
+            <NavLink
               key={link}
+              to={NAV_ROUTES[link]}
               className="nav-link"
-              onClick={() => handleNav(link)}
-              style={{ fontSize: 17, padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,.07)" }}
+              style={{ fontSize: 17, padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,.07)", textDecoration: "none", display: "block" }}
+              onClick={() => setMenuOpen(false)}
+              end={link === "Home"}
             >
               {link}
-            </span>
+            </NavLink>
           ))}
-          <button className="btn-primary" onClick={() => handleNav("Contact")}>
-            Book a Call →
-          </button>
+          <Link to="/contact" style={{ textDecoration: "none" }} onClick={() => setMenuOpen(false)}>
+            <button className="btn-primary">Book a Call →</button>
+          </Link>
         </div>
       )}
     </nav>

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Layout
 import Navbar       from "./components/layout/Navbar";
@@ -13,46 +14,40 @@ import Home         from "./pages/Home";
 import About        from "./pages/About";
 import Services     from "./pages/Services";
 import Portfolio    from "./pages/Portfolio";
-import Careers      from "./pages/Careers";
-import Contact      from "./pages/Contact";
+import Careers       from "./pages/Careers";
+import Contact       from "./pages/Contact";
+import ServiceDetail from "./pages/ServiceDetail";
 
-// Page map — add new pages here
-const PAGES = {
-  Home,
-  About,
-  Services,
-  Portfolio,
-  Careers,
-  Contact,
-};
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("Home");
-
-  // Scroll to top on every page change
-  useEffect(() => { window.scrollTo(0, 0); }, [currentPage]);
-
-  const navigate = (page) => setCurrentPage(page);
-
-  const PageComponent = PAGES[currentPage] || Home;
-
   return (
     <>
-      {/* Global ambient effects */}
       <NoiseOverlay />
       <CursorGlow />
+      <ScrollToTop />
 
       <div style={{ minHeight:"100vh", display:"flex", flexDirection:"column", background:"#08080e" }}>
+        <Navbar />
 
-        <Navbar currentPage={currentPage} onNavigate={navigate} />
-
-        {/* paddingTop offsets the fixed navbar height */}
         <main style={{ flex:1, paddingTop:72 }}>
-          <PageComponent onNavigate={navigate} />
+          <Routes>
+            <Route path="/"          element={<Home />} />
+            <Route path="/about"     element={<About />} />
+            <Route path="/services"         element={<Services />} />
+            <Route path="/services/:slug"   element={<ServiceDetail />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/careers"   element={<Careers />} />
+            <Route path="/contact"   element={<Contact />} />
+            <Route path="*"          element={<Home />} />
+          </Routes>
         </main>
 
-        <Footer onNavigate={navigate} />
-
+        <Footer />
       </div>
     </>
   );

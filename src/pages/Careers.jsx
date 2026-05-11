@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import GeoBg  from "../components/ui/GeoBg";
 import Reveal  from "../components/ui/Reveal";
 import { CAREERS } from "../data/siteData";
 
-export default function Careers({ onNavigate }) {
+export default function Careers() {
+  const navigate = useNavigate();
   const muted = "rgba(255,255,255,.42)";
   const bdr   = "rgba(255,255,255,.07)";
 
@@ -78,7 +80,7 @@ export default function Careers({ onNavigate }) {
                 </div>
 
                 <button
-                  onClick={() => onNavigate("Contact")}
+                  onClick={() => navigate("/contact")}
                   className={job.highlight ? "btn-primary" : "btn-ghost"}
                   style={{ width:"100%", padding:"15px 24px" }}
                 >

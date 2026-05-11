@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import GeoBg      from "../components/ui/GeoBg";
 import Particles  from "../components/ui/Particles";
 import Marquee    from "../components/ui/Marquee";
@@ -9,7 +10,8 @@ import { SERVICES, TESTIMONIALS, TECH_STACK } from "../data/siteData";
 
 const HERO_WORDS = ["Scalable.", "Intelligent.", "Fast.", "Reliable.", "Secure."];
 
-export default function Home({ onNavigate }) {
+export default function Home() {
+  const navigate = useNavigate();
   const [wordIdx, setWordIdx] = useState(0);
 
   // Cycle hero words
@@ -71,10 +73,10 @@ export default function Home({ onNavigate }) {
             </div>
 
             <div style={{ animation:"slide-up .9s ease forwards", opacity:0, animationDelay:".55s", display:"flex", gap:16, flexWrap:"wrap", alignItems:"center" }}>
-              <button className="btn-primary" onClick={() => onNavigate("Contact")}>
+              <button className="btn-primary" onClick={() => navigate("/contact")}>
                 Book a Free Discovery Call →
               </button>
-              <button className="btn-ghost" onClick={() => onNavigate("Portfolio")}>
+              <button className="btn-ghost" onClick={() => navigate("/portfolio")}>
                 View Case Studies
               </button>
             </div>
@@ -146,7 +148,7 @@ export default function Home({ onNavigate }) {
           </div>
 
           <div style={{ textAlign:"center", marginTop:48 }}>
-            <button className="btn-ghost" onClick={() => onNavigate("Services")}>
+            <button className="btn-ghost" onClick={() => navigate("/services")}>
               View All Services →
             </button>
           </div>
@@ -168,8 +170,8 @@ export default function Home({ onNavigate }) {
                 Free 30-min discovery call. No commitment. Just honest advice from engineers who've shipped 50+ products.
               </p>
               <div style={{ display:"flex", gap:16, flexWrap:"wrap" }}>
-                <button className="btn-primary" onClick={() => onNavigate("Contact")}>Book a Free Call Today →</button>
-                <button className="btn-ghost"   onClick={() => onNavigate("Careers")}>View Careers</button>
+                <button className="btn-primary" onClick={() => navigate("/contact")}>Book a Free Call Today →</button>
+                <button className="btn-ghost"   onClick={() => navigate("/careers")}>View Careers</button>
               </div>
             </Reveal>
             <Reveal delay={120} y={20}>

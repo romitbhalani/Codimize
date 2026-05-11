@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import GeoBg      from "../components/ui/GeoBg";
 import Reveal      from "../components/ui/Reveal";
 import StatCard    from "../components/ui/StatCard";
@@ -11,7 +12,8 @@ const VALUES = [
   { icon:"▣", title:"Ownership Mindset",       desc:"We treat your product like it's ours. Every decision is made with business outcomes in mind.",         color:"#34d399", rgb:"52,211,153"  },
 ];
 
-export default function About({ onNavigate }) {
+export default function About() {
+  const navigate = useNavigate();
   const muted = "rgba(255,255,255,.42)";
   const bdr   = "rgba(255,255,255,.07)";
 
@@ -113,7 +115,7 @@ export default function About({ onNavigate }) {
                   <p style={{ color:muted, marginBottom:32, fontSize:16 }}>
                     We're selective about who we work with — because deep partnership is what we do best.
                   </p>
-                  <button className="btn-primary" onClick={() => onNavigate("Contact")}>
+                  <button className="btn-primary" onClick={() => navigate("/contact")}>
                     Start a Conversation →
                   </button>
                 </div>

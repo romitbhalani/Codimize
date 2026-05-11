@@ -1,5 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import GeoBg from "../ui/GeoBg";
-import { NAV_LINKS } from "../../data/siteData";
+import { NAV_LINKS, NAV_ROUTES } from "../../data/siteData";
 
 const FOOTER_LINKS = [
   {
@@ -16,7 +17,8 @@ const FOOTER_LINKS = [
   },
 ];
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
+  const navigate = useNavigate();
   const muted = "rgba(255,255,255,.42)";
   const dim   = "rgba(255,255,255,.2)";
   const bdr   = "rgba(255,255,255,.07)";
@@ -128,7 +130,7 @@ export default function Footer({ onNavigate }) {
                     <li
                       key={link}
                       style={{ fontSize: 14, color: muted, cursor: "pointer", transition: "color .2s" }}
-                      onClick={() => NAV_LINKS.includes(link) && onNavigate(link)}
+                      onClick={() => NAV_LINKS.includes(link) && navigate(NAV_ROUTES[link])}
                       onMouseOver={(e) => (e.target.style.color = "#38BEFF")}
                       onMouseOut={(e)  => (e.target.style.color = muted)}
                     >

@@ -1,4 +1,220 @@
+# ==============================================================
+# robots.txt — codimize.com
+# Generated: 2026-05-20
+# Docs: https://developers.google.com/search/docs/crawling-indexing/robots/intro
+# Validate: https://www.google.com/webmasters/tools/robots-testing-tool
+# ==============================================================
+
+
+# --------------------------------------------------------------
+# DEFAULT: All crawlers
+# Allow the full site; only block non-essential paths below.
+# --------------------------------------------------------------
 User-agent: *
 Allow: /
 
+# --- Admin & CMS back-ends ---
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /dashboard/
+Disallow: /cms/
+Disallow: /backend/
+Disallow: /panel/
+Disallow: /control/
+Disallow: /login
+Disallow: /logout
+Disallow: /register
+Disallow: /account/
+Disallow: /user/
+
+# --- API & server-side endpoints ---
+Disallow: /api/
+Disallow: /graphql
+Disallow: /rpc/
+Disallow: /webhook/
+Disallow: /webhooks/
+Disallow: /socket.io/
+
+# --- Build artifacts & source files ---
+Disallow: /.next/
+Disallow: /.nuxt/
+Disallow: /.svelte-kit/
+Disallow: /build/
+Disallow: /dist/
+Disallow: /out/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+
+# --- Config & environment files ---
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /.env.production
+Disallow: /config/
+Disallow: /secrets/
+
+# --- Dev / staging / preview paths ---
+Disallow: /staging/
+Disallow: /preview/
+Disallow: /dev/
+Disallow: /test/
+Disallow: /qa/
+Disallow: /sandbox/
+Disallow: /_storybook/
+Disallow: /storybook/
+
+# --- Utility & low-value pages ---
+Disallow: /search?
+Disallow: /tag/
+Disallow: /feed/
+Disallow: /rss/
+Disallow: /print/
+Disallow: /embed/
+Disallow: /cdn-cgi/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+
+# --- Common file types that add no SEO value ---
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.sql$
+Disallow: /*.sh$
+Disallow: /*.yml$
+Disallow: /*.yaml$
+# NOTE: sitemap.xml is explicitly excluded from the rule above
+#       because it is referenced via the Sitemap: directive below,
+#       which implicitly allows crawlers to fetch it.
+
+# --- Tracking & analytics noise ---
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?source=*
+Disallow: /*?campaign=*
+
+
+# --------------------------------------------------------------
+# GOOGLEBOT — inherits * rules; explicit allow for JS assets
+# Google needs to render JS to index modern SPA/SSR sites.
+# --------------------------------------------------------------
+User-agent: Googlebot
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff2$
+
+
+# --------------------------------------------------------------
+# GOOGLE IMAGE BOT
+# --------------------------------------------------------------
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /images/
+Allow: /public/
+
+
+# --------------------------------------------------------------
+# BINGBOT
+# --------------------------------------------------------------
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+
+# --------------------------------------------------------------
+# DUCKDUCKBOT
+# --------------------------------------------------------------
+User-agent: DuckDuckBot
+Allow: /
+
+
+# --------------------------------------------------------------
+# APPLEBOT (Siri, Spotlight, Safari suggestions)
+# --------------------------------------------------------------
+User-agent: Applebot
+Allow: /
+
+
+# --------------------------------------------------------------
+# AI TRAINING BOTS — block to protect proprietary content
+# Remove any you are comfortable allowing.
+# --------------------------------------------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+
+# --------------------------------------------------------------
+# AGGRESSIVE / JUNK SCRAPERS — block entirely
+# --------------------------------------------------------------
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+
+# --------------------------------------------------------------
+# SITEMAP REFERENCE
+# Tells all crawlers where to find the XML sitemap.
+# Submit the same URL in Google Search Console after deploying.
+# --------------------------------------------------------------
 Sitemap: https://www.codimize.com/sitemap.xml
+
+
+# ==============================================================
+# DEPLOYMENT CHECKLIST
+# ==============================================================
+# □ Upload this file to the root of your domain:
+#     https://www.codimize.com/robots.txt
+# □ Verify it resolves correctly in a browser
+# □ Test with Google's Robots Testing Tool (link at top of file)
+# □ Submit sitemap.xml in Google Search Console:
+#     https://search.google.com/search-console
+# □ Review the AI bot block list — remove entries you want to allow
+# □ Adjust Crawl-delay for Bingbot if your server is high-traffic
+# □ Add any CMS-specific paths not listed here
+# ==============================================================
